@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -21,6 +22,7 @@ class RegistrationFormType extends AbstractType
             ->add('firstName')
             ->add('lastName')
             ->add('phoneNumber',TelType::class,[
+                'attr' => ['minlength' => 8,'maxlength' => 8,'autocomplete' => 'tel'],
                 'constraints' => [
                     new Length([
                         'min' => 8,
@@ -31,7 +33,14 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
-            ->add('email')
+            ->add('email',EmailType::class, [
+                'attr' => ['autocomplete' => 'email'],
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'S\'il vous plaît, entrez votre adresse email',
+                    ]),
+                ],
+            ])
            
             ->add('plainPassword', PasswordType::class, [
                                 // instead of being set onto the object directly,
@@ -44,7 +53,7 @@ class RegistrationFormType extends AbstractType
                     ]),
                     new Length([
                         'min' => 6,
-                        'minMessage' => 'votre mot de passe doit contenir au moins {{ limit }} caractères',
+                        'minMessage' => 'Votre mot de passe doit contenir au moins {{ limit }} caractères',
                         // max length allowed by Symfony for security reasons
                         'max' => 4096,
                     ]),

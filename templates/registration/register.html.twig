@@ -10,7 +10,7 @@
 				<div class="p-8">
 					<h1 class="text-3xl font-black text-slate-700">S'inscrire
 					</h1>
-					<p class="mt-2 mb-5 text-base leading-tight text-gray-600">Créez un compte pour pouvoir postuler et gérez vous candidature
+					<p class="mt-2 mb-5 text-base leading-tight text-gray-600">Créez un compte pour pouvoir créer et gérez vos réclamations
 					</p>
 					<form class="mt-8" name="registration_form" method="post">
                         
@@ -23,11 +23,12 @@
     ">
 								Prénom 
 							</label>
-							<p class="text-red-500">
-								{{form_errors(registrationForm.firstName)}}
-							</p>
+							
 
 
+						</div>
+						<div class="text-red-500 ">
+							{{form_errors(registrationForm.firstName)}}
 						</div>
 
 						<div class="relative mt-2 w-full">
@@ -37,10 +38,11 @@
     ">
 								Nom 
 							</label>
-							<p class="text-red-500">
-								{{form_errors(registrationForm.lastName)}}
-							</p>
+							
 
+						</div>
+						<div class="text-red-500 ">
+							{{form_errors(registrationForm.lastName)}}
 						</div>
 					</div>
 
@@ -51,23 +53,27 @@
     ">
 								Email 
 							</label>
-							<p class="text-red-500">
-								{{form_errors(registrationForm.email)}}
-							</p>
+							
 
 						</div>
+						<div class="text-red-500 ">
+							{{form_errors(registrationForm.email)}}
+						</div>
 
-						<div class="relative mt-2 w-full">
+						<div class="relative mt-2 w-full ">
 							<input required type="tel" name="registration_form[phoneNumber]" id="phoneNumber" class="border-1 peer block w-full appearance-none rounded-lg border border-gray-300 bg-transparent px-2.5 pb-2.5 pt-4 text-sm text-gray-900 focus:border-[#5368d5]
      focus:outline-none focus:ring-0" placeholder=" "/>
 							<label for="phoneNumber" class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-75 transform cursor-text select-none bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:px-2 peer-focus:text-[#5368d5]
     ">
-								Numeros de téléphone 
+								Numero de téléphone 
 							</label>
-							<p class="text-red-500">
-							{{form_errors(registrationForm.phoneNumber)}}
-							</p>
+
+							
 	
+						</div>
+						<div class="text-red-500 ">
+								
+							{{form_errors(registrationForm.phoneNumber)}}
 						</div>
 	
 
@@ -78,10 +84,11 @@
     ">
 								Mot de passe
                             </label>
-							<p class="text-red-500">
-								{{form_errors(registrationForm.plainPassword)}}
-							</p>
-
+						
+						</div>
+						<div class="text-red-500">
+								
+							{{form_errors(registrationForm.plainPassword)}}
 						</div>
 
                         <div class="mt-2 w-full">
