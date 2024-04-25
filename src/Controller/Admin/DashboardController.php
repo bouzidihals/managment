@@ -34,7 +34,9 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('Reclamation App');
+            ->setTitle('Reclamation App')
+            ->renderSidebarMinimized();
+
     }
 
     public function configureCrud(): Crud
