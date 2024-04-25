@@ -27,6 +27,7 @@ class RegistrationFormType extends AbstractType
                         'minMessage' => 'Your phone number should be at least {{ limit }} characters',
                         // max length allowed by Symfony for security reasons
                         'max' => 8,
+                        'maxMessage' => 'Your phone number should be at most {{ limit }} characters',
                     ]),
                 ],
             ])
