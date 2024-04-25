@@ -24,10 +24,10 @@ class RegistrationFormType extends AbstractType
                 'constraints' => [
                     new Length([
                         'min' => 8,
-                        'minMessage' => 'Your phone number should be at least {{ limit }} characters',
+                        'minMessage' => 'votre numéro de téléphone doit contenir au moins {{ limit }} caractères',
                         // max length allowed by Symfony for security reasons
                         'max' => 8,
-                        'maxMessage' => 'Your phone number should be at most {{ limit }} characters',
+                        'maxMessage' => 'votre numéro de téléphone doit contenir au plus {{ limit }} caractères',
                     ]),
                 ],
             ])
@@ -40,11 +40,11 @@ class RegistrationFormType extends AbstractType
                 'attr' => ['autocomplete' => 'new-password'],
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Please enter a password',
+                        'message' => 'S\'il vous plaît, entrez un mot de passe',
                     ]),
                     new Length([
                         'min' => 6,
-                        'minMessage' => 'Your password should be at least {{ limit }} characters',
+                        'minMessage' => 'votre mot de passe doit contenir au moins {{ limit }} caractères',
                         // max length allowed by Symfony for security reasons
                         'max' => 4096,
                     ]),
@@ -54,7 +54,7 @@ class RegistrationFormType extends AbstractType
                 'mapped' => false,
 'constraints' => [
     new IsTrue([
-        'message' => 'You should agree to our terms.',
+        'message' => 'Vous devez accepter nos conditions d\'utilisation',
     ]),
 ],
 ])
