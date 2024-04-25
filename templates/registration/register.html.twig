@@ -26,6 +26,8 @@
 							<p class="text-red-500">
 								{{form_errors(registrationForm.firstName)}}
 							</p>
+
+
 						</div>
 
 						<div class="relative mt-2 w-full">
@@ -35,7 +37,9 @@
     ">
 								Nom 
 							</label>
-							{{form_errors(registrationForm.lastName)}}
+							<p class="text-red-500">
+								{{form_errors(registrationForm.lastName)}}
+							</p>
 
 						</div>
 					</div>
@@ -47,7 +51,9 @@
     ">
 								Email 
 							</label>
-							{{form_errors(registrationForm.email)}}
+							<p class="text-red-500">
+								{{form_errors(registrationForm.email)}}
+							</p>
 
 						</div>
 
@@ -58,7 +64,9 @@
     ">
 								Numeros de téléphone 
 							</label>
+							<p class="text-red-500">
 							{{form_errors(registrationForm.phoneNumber)}}
+							</p>
 	
 						</div>
 	
@@ -70,7 +78,9 @@
     ">
 								Mot de passe
                             </label>
-							{{form_errors(registrationForm.plainPassword)}}
+							<p class="text-red-500">
+								{{form_errors(registrationForm.plainPassword)}}
+							</p>
 
 						</div>
 
