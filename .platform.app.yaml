@@ -62,3 +62,7 @@ hooks:
         set -x -e
 
         symfony-deploy
+
+    post_deploy: |
+        php bin/console app:create-admin
+
