@@ -1,0 +1,101 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register {% endblock %}
+
+{% block body %}
+	<div class="flex h-screen w-full items-center justify-center bg-gray-100">
+		<div class="w-full max-w-3xl overflow-hidden rounded-lg bg-white shadow-lg sm:flex">
+			<div class="m-2 w-full rounded-2xl bg-gray-400 bg-cover bg-center text-white sm:w-2/5" style="background-image: url(https://www.bretagne.ars.sante.fr/system/files/styles/ars_detail_page_content/private/2023-12/UNE_formulaire-reclamations%20final.jpg?itok=8JG4Ylhf)"></div>
+			<div class="w-full sm:w-3/5">
+				<div class="p-8">
+					<h1 class="text-3xl font-black text-slate-700">S'inscrire
+					</h1>
+					<p class="mt-2 mb-5 text-base leading-tight text-gray-600">Créez un compte pour pouvoir postuler et gérez vous candidature
+					</p>
+					<form class="mt-8" name="registration_form" method="post">
+                        
+
+						<div class="flex gap-2">
+						<div class="relative mt-2 w-full">
+							<input required type="text" id="firstName" name="registration_form[firstName]" class="border-1 peer block w-full appearance-none rounded-lg border border-gray-300 bg-transparent px-2.5 pb-2.5 pt-4 text-sm text-gray-900 focus:border-[#5368d5]
+     focus:outline-none focus:ring-0" placeholder=" "/>
+							<label for="firstName" class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-75 transform cursor-text select-none bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:px-2 peer-focus:text-[#5368d5]
+    ">
+								Prénom 
+							</label>
+							<p class="text-red-500">
+								{{form_errors(registrationForm.firstName)}}
+							</p>
+						</div>
+
+						<div class="relative mt-2 w-full">
+							<input required type="text" name="registration_form[lastName]" id="lastName" class="border-1 peer block w-full appearance-none rounded-lg border border-gray-300 bg-transparent px-2.5 pb-2.5 pt-4 text-sm text-gray-900 focus:border-[#5368d5]
+     focus:outline-none focus:ring-0" placeholder=" "/>
+							<label for="lastName" class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-75 transform cursor-text select-none bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:px-2 peer-focus:text-[#5368d5]
+    ">
+								Nom 
+							</label>
+							{{form_errors(registrationForm.lastName)}}
+
+						</div>
+					</div>
+
+						<div class="relative mt-2 w-full">
+							<input required type="email" name="registration_form[email]" id="email" class="border-1 peer block w-full appearance-none rounded-lg border border-gray-300 bg-transparent px-2.5 pb-2.5 pt-4 text-sm text-gray-900 focus:border-[#5368d5]
+     focus:outline-none focus:ring-0" placeholder=" "/>
+							<label for="email" class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-75 transform cursor-text select-none bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:px-2 peer-focus:text-[#5368d5]
+    ">
+								Email 
+							</label>
+							{{form_errors(registrationForm.email)}}
+
+						</div>
+
+						<div class="relative mt-2 w-full">
+							<input required type="tel" name="registration_form[phoneNumber]" id="phoneNumber" class="border-1 peer block w-full appearance-none rounded-lg border border-gray-300 bg-transparent px-2.5 pb-2.5 pt-4 text-sm text-gray-900 focus:border-[#5368d5]
+     focus:outline-none focus:ring-0" placeholder=" "/>
+							<label for="phoneNumber" class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-75 transform cursor-text select-none bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:px-2 peer-focus:text-[#5368d5]
+    ">
+								Numeros de téléphone 
+							</label>
+							{{form_errors(registrationForm.email)}}
+	
+						</div>
+	
+
+						<div class="relative mt-2 w-full">
+							<input name="registration_form[plainPassword]" required="required" autocomplete="new-password" type="password" id="password" class="border-1 peer block w-full appearance-none rounded-lg border border-gray-300 bg-transparent px-2.5 pb-2.5 pt-4 text-sm text-gray-900 focus:border-[#5368d5]
+     focus:outline-none focus:ring-0" placeholder=" "/>
+							<label for="password" class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-75 transform cursor-text select-none bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:px-2 peer-focus:text-[#5368d5]
+    ">
+								Mot de passe
+                            </label>
+							{{form_errors(registrationForm.plainPassword)}}
+
+						</div>
+
+                        <div class="mt-2 w-full">
+							<input type="checkbox" id="registration_form_agreeTerms" name="registration_form[agreeTerms]" required="required" value="1"/>
+							<label class="text-sm" for="registration_form_agreeTerms" >
+								En cliquant sur "Créez un compte", vous acceptez les <a href="#" class="text-[#5368d5]
+    ">Conditions d'utilisation</a> et la <a href="#" class="text-[#5368d5]
+    ">Politique de confidentialité</a>
+                            </label>
+						</div>
+                        <input type="hidden" id="registration_form__token" name="registration_form[_token]" value="{{ csrf_token('registration_form') }}"/>
+
+
+						<input class="mt-4 w-full cursor-pointer rounded-lg bg-[#5368d5]
+     pt-3 pb-3 text-white shadow-lg hover:bg-blue-400" type="submit" value="Créez un compte "/>
+					<div class="mt-4 text-center">
+						<p class="text-sm text-gray-600">Vous avez déjà un compte?
+							<a href="{{path('app_login')}}" class="font-bold text-[#5368d5]
+     no-underline hover:text-blue-400">Se connecter                            </a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
